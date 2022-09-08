@@ -1,6 +1,9 @@
 use std::io;
 use std::cmp::Ordering;
 use rand::Rng;
+use guess::Guess;
+
+mod guess;
 
 fn main() {
     println!("Guess the number!");
@@ -27,6 +30,10 @@ fn main() {
             println!("The secret number will be between 1 and 100");
             continue;
         }
+
+        let g = Guess::new(guess);
+
+        println!("{:?}", g);
 
         println!("You guessed: {}", guess);
 
